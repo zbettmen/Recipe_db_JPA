@@ -17,6 +17,7 @@ public class ComandLine implements CommandLineRunner {
     private RecipeRepository recipeRepository;
     private RecipeIngredientRepository recipeIngredientRepository;
 
+
     @Autowired
     public ComandLine(RecipeRepository recipeRepository, RecipeIngredientRepository recipeIngredientRepository) {
         this.recipeRepository = recipeRepository;
@@ -30,6 +31,8 @@ public class ComandLine implements CommandLineRunner {
       recipeRepository.save(r);
         System.out.println(r);
         System.out.println(recipeRepository.findByRecipeByNameContains("d"));
+
+
     }
 
 

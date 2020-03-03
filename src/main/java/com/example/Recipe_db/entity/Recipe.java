@@ -56,6 +56,13 @@ public class Recipe {
         return categories.remove(recipeCategory);
     }
 
+    public boolean addRecipeIngrident(RecipeIngredient recipeIngredient){
+        if (recipeIngredient == null) return false;
+
+        if(recipeIngredient.g)
+
+    }
+
     public Recipe(int recipeId, String recipeName, RecipeInstruction instruction) {
         this.recipeId = recipeId;
         this.recipeName = recipeName;
