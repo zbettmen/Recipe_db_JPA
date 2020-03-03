@@ -67,6 +67,18 @@ public class Recipe {
 
         return recipeIngredients.add(recipeIngredient);
 
+
+
+    }
+
+    public boolean deleteRecipeIngrident(RecipeIngredient recipeIngredient){
+        if (recipeIngredient == null) return false;
+
+        if (recipeIngredient.getRecipe() != this) return false;
+
+        recipeIngredient.setRecipe(null);
+
+        return recipeIngredients.remove(recipeIngredient);
     }
 
     public Recipe(int recipeId, String recipeName, RecipeInstruction instruction) {
