@@ -21,8 +21,9 @@ public class ComandLine implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         ingridentRepository.save(new Ingredient("Bruce Wayne"));
-        System.out.println(ingridentRepository.findByIngredientName("Bruce Wayne"));
+        System.out.println("-------------"+ingridentRepository.findByIngridentByNameContains("r"));
     }
+
 
 
 
