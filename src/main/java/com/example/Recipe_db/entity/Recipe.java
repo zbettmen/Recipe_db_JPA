@@ -41,6 +41,21 @@ public class Recipe {
     )
     private List<RecipeCategory> categories;
 
+    public boolean addRecipeCategory(RecipeCategory recipeCategory){
+        if(recipeCategory == null) return false;
+
+        if(categories.contains(recipeCategory)) return false;
+            return categories.add(recipeCategory);
+    }
+
+    public boolean removeRecipeCategory(RecipeCategory recipeCategory){
+        if(recipeCategory == null) return false;
+
+        if (!categories.contains(recipeCategory)) return false;
+
+        return categories.remove(recipeCategory);
+    }
+
     public Recipe(int recipeId, String recipeName, RecipeInstruction instruction) {
         this.recipeId = recipeId;
         this.recipeName = recipeName;
