@@ -12,7 +12,7 @@ public interface RecipeRepository extends CrudRepository <Recipe, Integer> {
     @Query("SELECT r FROM Recipe r WHERE r.recipeName LIKE %:recipeName%")
     List<Recipe> findByRecipeByNameContains(@Param("recipeName") String recipeName);
 
-    @Query("SELECT r FROM Recipe r JOIN FETCH r.recipeIngredients recipeIngredient WHERE recipeIngredients.ingredient.ingredientName = :ingredientName")
+    @Query("SELECT r FROM Recipe r JOIN FETCH r.recipeIngredients recipeIngredient WHERE recipeIngredient.ingredient.ingredientName = :ingredientName")
     List<Recipe> findRecipeByIngredient(@Param("ingredientName") String ingredientName);
 
 

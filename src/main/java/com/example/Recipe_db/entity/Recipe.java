@@ -1,6 +1,7 @@
 package com.example.Recipe_db.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -19,7 +20,7 @@ public class Recipe {
 
     )
 
-    private List<RecipeIngredient> recipeIngredients;
+    private List<RecipeIngredient> recipeIngredients = new ArrayList<>();
 
     @OneToOne(
             fetch = FetchType.LAZY,

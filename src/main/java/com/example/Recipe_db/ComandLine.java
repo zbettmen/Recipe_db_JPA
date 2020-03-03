@@ -4,6 +4,7 @@ import com.example.Recipe_db.Data.IngridentRepository;
 import com.example.Recipe_db.Data.RecipeIngredientRepository;
 import com.example.Recipe_db.Data.RecipeRepository;
 import com.example.Recipe_db.entity.Ingredient;
+import com.example.Recipe_db.entity.Measurement;
 import com.example.Recipe_db.entity.Recipe;
 import com.example.Recipe_db.entity.RecipeIngredient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class ComandLine implements CommandLineRunner {
     private RecipeIngredientRepository recipeIngredientRepository;
 
 
+
     @Autowired
     public ComandLine(RecipeRepository recipeRepository, RecipeIngredientRepository recipeIngredientRepository) {
         this.recipeRepository = recipeRepository;
@@ -27,10 +29,18 @@ public class ComandLine implements CommandLineRunner {
     @Transactional
     @Override
     public void run(String... args) throws Exception {
+        Ingredient i = new Ingredient("Rijadhej");
+        RecipeIngredient ri = new RecipeIngredient(i,3, Measurement.KG);
+
        Recipe r = new Recipe("Rijad");
-      recipeRepository.save(r);
+       r.addRecipeIngrident(ri);
+       recipeRepository.save(r);
         System.out.println(r);
-        System.out.println(recipeRepository.findByRecipeByNameContains("d"));
+        System.out.println(recipeRepository.findRecipeByIngredient("Rijadhej"));
+
+
+
+
 
 
     }
