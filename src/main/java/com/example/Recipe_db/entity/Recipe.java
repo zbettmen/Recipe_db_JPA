@@ -46,7 +46,7 @@ public class Recipe {
         if(recipeCategory == null) return false;
 
         if(categories.contains(recipeCategory)) return false;
-            return categories.add(recipeCategory);
+        return categories.add(recipeCategory);
     }
 
     public boolean removeRecipeCategory(RecipeCategory recipeCategory){
@@ -164,4 +164,6 @@ public class Recipe {
                 '}';
     }
 }
+
+
 

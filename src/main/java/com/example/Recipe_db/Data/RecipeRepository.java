@@ -18,6 +18,9 @@ public interface RecipeRepository extends CrudRepository <Recipe, Integer> {
     @Query("SELECT r FROM Recipe r JOIN FETCH r.categories recipeCategory WHERE recipeCategory.category = :categoryName")
     List<Recipe> findRecipeByCategory(@Param("categoryName")String categoryName);
 
+    //Hitta alla recept som har en eller fleraträffar från en samling kategorier.  Ex: {”spicy”,”mexican”,”weekend”
+    //kvar att göra
+
 
 
 }
