@@ -40,7 +40,7 @@ public class Recipe {
             inverseJoinColumns = @JoinColumn(name = "recipe_category_id")
 
     )
-    private List<RecipeCategory> categories;
+    private List<RecipeCategory> categories = new ArrayList<>();
 
     public boolean addRecipeCategory(RecipeCategory recipeCategory){
         if(recipeCategory == null) return false;

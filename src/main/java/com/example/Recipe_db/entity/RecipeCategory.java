@@ -1,6 +1,7 @@
 package com.example.Recipe_db.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -22,7 +23,7 @@ public class RecipeCategory {
             inverseJoinColumns = @JoinColumn(name = "recipe_id")
 
     )
-    private List<Recipe> recipes;
+    private List<Recipe> recipes = new ArrayList<>();
 
     public RecipeCategory(int categoryId, String category) {
         this.categoryId = categoryId;
