@@ -59,7 +59,13 @@ public class Recipe {
     public boolean addRecipeIngrident(RecipeIngredient recipeIngredient){
         if (recipeIngredient == null) return false;
 
-        if(recipeIngredient.g)
+        if(recipeIngredient.getRecipe() != null) return false;
+
+        if(recipeIngredients.contains(recipeIngredient)) return false;
+
+        recipeIngredient.setRecipe(this);
+
+        return recipeIngredients.add(recipeIngredient);
 
     }
 
