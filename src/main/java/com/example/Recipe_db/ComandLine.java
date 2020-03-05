@@ -9,6 +9,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Arrays;
+
 @Component
 public class ComandLine implements CommandLineRunner {
 
@@ -34,6 +36,7 @@ public class ComandLine implements CommandLineRunner {
 
 
 
+
         Ingredient i = new Ingredient("Rijadhej");
         RecipeIngredient ri = new RecipeIngredient(i,3, Measurement.KG);
 
@@ -48,6 +51,7 @@ public class ComandLine implements CommandLineRunner {
         System.out.println(r);
         System.out.println(recipeRepository.findRecipeByIngredient("Rijadhej"));
 
+        System.out.println("-----------------------"+recipeRepository.findRecipeFromCategories(Arrays.asList("hej")));
 
 
 

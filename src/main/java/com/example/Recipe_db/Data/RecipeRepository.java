@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Collection;
 import java.util.List;
 
 public interface RecipeRepository extends CrudRepository <Recipe, Integer> {
@@ -20,6 +21,14 @@ public interface RecipeRepository extends CrudRepository <Recipe, Integer> {
 
     //Hitta alla recept som har en eller fleraträffar från en samling kategorier.  Ex: {”spicy”,”mexican”,”weekend”
     //kvar att göra
+
+    @Query("SELECT r FROM Recipe r JOIN FETCH r.categories recipeCategory WHERE recipeCategory.category IN :listOfCategoryName")
+    List<Recipe> findRecipeFromCategories(@Param("listOfCategoryName") List<String> listOfCategoryName);
+
+
+
+
+
 
 
 
