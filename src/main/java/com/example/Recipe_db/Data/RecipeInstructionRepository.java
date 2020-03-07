@@ -11,8 +11,8 @@ import java.util.List;
 
 public interface RecipeInstructionRepository extends CrudRepository<RecipeInstruction,String> {
 
-    @Query("SELECT i FROM Ingredient i WHERE i.ingredientName LIKE %:ingredientName%")
-    List<Ingredient> findByIngridentByNameContains(@Param("ingredientName") String ingredientName);
+    //@Query("SELECT i FROM Ingredient i WHERE i.ingredientName LIKE %:ingredientName%")
+    //List<Ingredient> findByIngridentByNameContains(@Param("ingredientName") String ingredientName);
 
 
 }

@@ -32,8 +32,6 @@ public class ComandLine implements CommandLineRunner {
 
         RecipeCategory recipeCategory = new RecipeCategory("hej");
 
-        RecipeCategory recipeCategory = new RecipeCategory("hej");
-
 
 
 
