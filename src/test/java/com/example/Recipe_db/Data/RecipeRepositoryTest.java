@@ -22,7 +22,13 @@ public class RecipeRepositoryTest {
     private TestEntityManager entityManager;
 
 
-
+    private List<Recipe> data(){
+        return Arrays.asList(
+                new Recipe("Burek"),
+                new Recipe("JuggeGryta"),
+                new Recipe("Pizza")
+        );
+    }
 
 
 
@@ -40,7 +46,9 @@ public class RecipeRepositoryTest {
         recipe.addRecipeCategory(recipeCategory1);
         recipe.setInstruction(new RecipeInstruction("Test instruction"));
         testObject.save(recipe);
-        testObject.deleteAll();
+        //testObject.deleteAll();
+
+
 
 
 
@@ -68,7 +76,16 @@ public class RecipeRepositoryTest {
         assertEquals(1,actual.size());
     }
 
+    @Test
+    public void findRecipeByCategories_test(){
+        List<Recipe> result = testObject.findRecipeFromCategories(Arrays.asList("Test"));
 
+        assertEquals(1,result.size());
+
+
+
+
+    }
 
 
 
