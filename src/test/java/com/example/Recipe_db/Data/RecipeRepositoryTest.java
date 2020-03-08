@@ -30,7 +30,8 @@ public class RecipeRepositoryTest {
         );
     }
 
-
+    private Recipe testRecipe;
+    private int testRecipeId;
 
 
     @BeforeEach
@@ -47,6 +48,7 @@ public class RecipeRepositoryTest {
         recipe.setInstruction(new RecipeInstruction("Test instruction"));
         testObject.save(recipe);
         //testObject.deleteAll();
+
 
 
 
@@ -86,6 +88,14 @@ public class RecipeRepositoryTest {
 
 
     }
+    @Test
+    public void findByRecipeName_test(){
+        int result = testObject.findByRecipeName("Test").get().getRecipeId();
+
+
+        assertEquals(testRecipeId,result);
+    }
+
 
 
 
