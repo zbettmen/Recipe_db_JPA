@@ -38,6 +38,9 @@ public class RecipeCategory {
 
     }
 
+    public <E> RecipeCategory(int i, String simple, ArrayList<E> es) {
+    }
+
     public int getCategoryId() {
         return categoryId;
     }

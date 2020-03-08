@@ -22,6 +22,10 @@ public class RecipeIngredient {
     private double amount;
     private Measurement measurement;
 
+    public RecipeIngredient(Ingredient test_ingredient) {
+    }
+
+
     public String getRecipeIngredientId() {
         return recipeIngredientId;
     }

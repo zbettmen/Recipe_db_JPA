@@ -7,8 +7,10 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 public interface RecipeRepository extends CrudRepository <Recipe, Integer> {
+    Optional<Recipe> findByRecipeName(String name);
 
     @Query("SELECT r FROM Recipe r WHERE r.recipeName LIKE %:recipeName%")
     List<Recipe> findByRecipeByNameContains(@Param("recipeName") String recipeName);

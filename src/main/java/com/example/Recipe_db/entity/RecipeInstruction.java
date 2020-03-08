@@ -27,6 +27,9 @@ public class RecipeInstruction {
 
     }
 
+    public RecipeInstruction(Object o, String test_instruction) {
+    }
+
     public String getInstructionId() {
         return instructionId;
     }

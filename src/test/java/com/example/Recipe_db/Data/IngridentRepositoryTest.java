@@ -1,4 +1,4 @@
-package com.example.Recipe_db.Test;
+package com.example.Recipe_db.Data;
 
 import com.example.Recipe_db.Data.IngridentRepository;
 import com.example.Recipe_db.entity.Ingredient;
@@ -35,8 +35,8 @@ class IngridentRepositoryTest {
 
     @BeforeEach
     void setUp(){
-        
-        ingredient = testObject.save(data().get(1));
+
+        ingredient = testObject.save(data().get(0));
         entityManager.flush();
 
 
@@ -58,8 +58,9 @@ class IngridentRepositoryTest {
         String contains = "r";
         List<Ingredient> result = testObject.findByIngridentByNameContains(contains);
 
-        assertEquals(1, result.size());
         assertTrue(result.contains(ingredient));
+        assertEquals(1, result.size());
+
     }
 
 
