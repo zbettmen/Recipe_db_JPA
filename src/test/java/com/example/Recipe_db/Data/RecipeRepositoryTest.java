@@ -40,6 +40,7 @@ public class RecipeRepositoryTest {
         recipe.addRecipeCategory(recipeCategory1);
         recipe.setInstruction(new RecipeInstruction("Test instruction"));
         testObject.save(recipe);
+        testObject.deleteAll();
 
 
 
@@ -67,7 +68,7 @@ public class RecipeRepositoryTest {
         assertEquals(1,actual.size());
     }
 
-    
+
 
 
 
